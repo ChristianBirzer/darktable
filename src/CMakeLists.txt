@@ -713,6 +713,7 @@ if(USE_LUA)
       "lua/film.c"
       "lua/format.c"
       "lua/gettext.c"
+      "lua/git.c"
       "lua/glist.c"
       "lua/gui.c"
       "lua/guides.c"
@@ -1044,3 +1045,14 @@ if (USE_LIBRAW)
   add_subdirectory(external/LibRaw-cmake)
   target_link_libraries(lib_darktable PRIVATE libraw::libraw)
 endif()
+
+# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -Wno-shadow -Wno-incompatible-pointer-types")
+# add_subdirectory( ${CMAKE_CURRENT_SOURCE_DIR}/external/libgit2 )
+
+# add_dependencies( lib_darktable libgit2 )
+
+target_include_directories( lib_darktable PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/external/libgit2/include )
+target_link_libraries( lib_darktable PRIVATE -L${CMAKE_SOURCE_DIR}/build/bin/external/libgit2 )
+message ( ${CMAKE_SOURCE_DIR}/../build/libgit/libgit2 )
+target_link_libraries( lib_darktable PRIVATE git2 )
+

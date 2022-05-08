@@ -17,3 +17,6 @@
 [submodule "src/external/LibRaw"]
 	path = src/external/LibRaw
 	url = https://github.com/LibRaw/LibRaw.git
+[submodule "src/external/libgit2"]
+	path = src/external/libgit2
+	url = https://github.com/libgit2/libgit2
